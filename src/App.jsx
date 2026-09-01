@@ -2,7 +2,6 @@ import { useEffect, useRef } from "react";
 import { isMobile, isTablet } from "react-device-detect";
 
 import Scene from "./Scene";
-import Loader from "./components/Loader";
 
 function App() {
   const tutorialRef = useRef(null);
@@ -23,8 +22,6 @@ function App() {
 
   return (
     <div className="canvas-wrapper">
-      <Loader />
-
       <Scene />
 
       <div ref={tutorialRef} className="tutorial-wrapper">
@@ -34,13 +31,6 @@ function App() {
           </span>
         ) : (
           <div className="tutorial-keys">
-            <section className="wasd-keys">
-              <span>W</span>
-              <span>A</span>
-              <span>S</span>
-              <span>D</span>
-            </section>
-
             <section className="arrow-keys">
               <span>&uarr;</span>
               <span>&larr;</span>
