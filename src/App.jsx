@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { isMobile, isTablet } from "react-device-detect";
 
 import Scene from "./Scene";
+import Loader from "./components/Loader";
 
 function App() {
   const tutorialRef = useRef(null);
@@ -22,6 +23,8 @@ function App() {
 
   return (
     <div className="canvas-wrapper">
+      <Loader />
+
       <Scene />
 
       <div ref={tutorialRef} className="tutorial-wrapper">
