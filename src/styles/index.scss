@@ -144,3 +144,60 @@ h6 {
     }
   }
 }
+
+.monitor-hotspot {
+  position: relative;
+
+  .hotspot-button {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1.5px solid rgba(255, 255, 255, 0.55);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+    cursor: pointer;
+    padding: 0;
+    animation: hotspot-pulse 2s ease-in-out infinite;
+  }
+
+  .hotspot-popup {
+    position: absolute;
+    bottom: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.16);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 8px 14px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 7px solid rgba(255, 255, 255, 0.16);
+    }
+  }
+}
+
+@keyframes hotspot-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(255, 255, 255, 0.6);
+  }
+}

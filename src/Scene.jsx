@@ -1,28 +1,20 @@
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls } from "@react-three/drei";
-import InfiniteSnowGround from "./components/InfiniteSnowGround";
+import Environment from "./components/Environment";
 
 import FrameLimiter from "./utils/FPSLimiter";
 
 const Scene = () => {
   return (
     <Canvas camera={{ fov: 65, position: [0, 30, 100] }} dpr={1}>
-      <color attach="background" args={["white"]} />
+      <color attach="background" args={["#0a0a0c"]} />
 
-      <directionalLight position={[4, 5, 0]} intensity={3} />
+      <directionalLight position={[4, 25, 10]} intensity={2} />
 
-      <ambientLight intensity={1} />
+      <ambientLight intensity={0.6} />
 
-      <InfiniteSnowGround />
+      <Environment />
 
       {/* <Stats /> */}
-      <OrbitControls
-        makeDefault
-        enableDamping={false}
-        enableRotate={false}
-        enableZoom={false}
-        enablePan={false}
-      />
 
       <FrameLimiter />
     </Canvas>

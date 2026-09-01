@@ -22,3 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Unused large model assets (not wired into the scene, gym exceeds GitHub's
+# 100MB file limit) - kept locally, not tracked in git.
+public/models/gym_equipment.glb
+public/models/free_cyberpunk_hovercar.glb
