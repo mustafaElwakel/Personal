@@ -95,6 +95,8 @@ const Environment = () => {
     });
   };
 
+  const handleCloseZoom = () => setIsZoomed(false);
+
   // Reference for movement input
   const movement = useRef({
     forward: false,
@@ -420,7 +422,17 @@ const Environment = () => {
             aria-label="Warehouse Tech"
           />
           {isZoomed && (
-            <div className="hotspot-popup">Warehouse Tech</div>
+            <div className="hotspot-popup">
+              <span>Warehouse Tech</span>
+              <button
+                type="button"
+                className="hotspot-popup-close"
+                onClick={handleCloseZoom}
+                aria-label="Close"
+              >
+                &times;
+              </button>
+            </div>
           )}
         </div>
       </Html>
